@@ -4,6 +4,8 @@ import React from 'react';
   class-based components use this.props
   children refers to any elements between the opening and closing tags
   of our component 
+
+  THIS IS REFERRED TO AS A FUNCTION STATELESS COMPONENT
 */
 const person = (props) => {
     return (
