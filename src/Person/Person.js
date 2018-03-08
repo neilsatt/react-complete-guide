@@ -6,12 +6,15 @@ import React from 'react';
   of our component 
 
   THIS IS REFERRED TO AS A FUNCTION STATELESS COMPONENT
+  Add input so we can add our own new name. Method comes
+  from the App.js file
 */
 const person = (props) => {
     return (
         <div>
-          <p>I am {props.name} and I'm {props.age} years old</p>
+          <p onClick={props.myClick}>I am {props.name} and I'm {props.age} years old</p>
           <p>{props.children}</p>
+          <input type="text" onChange={props.changed} value={props.name}/>
         </div>
     )
   

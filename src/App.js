@@ -21,23 +21,38 @@ class App extends Component {
       }
     ]
   }
-
-  switchNamehandler = () => {
+  // Pass in an argument, then bind it
+  switchNamehandler = (newName) => {
     // merges with existing state
     this.setState({persons: [
       // changes the first item in state
-     {name: 'Maroon', age: 300 },
+     {name: newName, age: 300 },
 
     ] })
   }
+ // for input field
+  nameChangedHandler = (event) => {
+    this.setState({
+      persons: [
+     {name: 'Max', age: 300 },
+     {name: event.target.value, age: 300 },
+     {name: 'Alice', age: 30 },
+    ] 
+   })
+  }
+  // pass method as a prop (line 42)
   render() {
     return (
       <div className="App">
        <h1>React app</h1>
        <p>Paragraph text</p>
-       <button onClick={this.switchNamehandler}>Switch Name</button>
-       <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-       <Person name="ted" age="33">Hobbies: Skiing</Person> 
+       <button onClick={this.switchNamehandler.bind(this, 'Fred')}>Switch Name</button>
+       <Person name={this.state.persons[0].name} 
+               age={this.state.persons[0].age}
+               myClick={this.switchNamehandler.bind(this, 'REY')} >Hobbies: Skiing</Person>
+       <Person name={this.state.persons[1].name}
+                age={this.state.persons[1].age}
+               changed={this.nameChangedHandler}/> 
        <Person name="sally" age="44"/> 
       </div>
     );
