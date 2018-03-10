@@ -27,6 +27,7 @@ class App extends Component {
     this.setState({persons: [
       // changes the first item in state
      {name: newName, age: 300 },
+     {name: newName, age: 33 },
 
     ] })
   }
@@ -41,12 +42,21 @@ class App extends Component {
    })
   }
   // pass method as a prop (line 42)
+  // add inline styles (not the preferred way)
   render() {
+    const myStyle = {
+      backgroundColor: 'teal',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px'
+    }
     return (
       <div className="App">
        <h1>React app</h1>
        <p>Paragraph text</p>
-       <button onClick={this.switchNamehandler.bind(this, 'Fred')}>Switch Name</button>
+       <button 
+       style={myStyle}
+       onClick={this.switchNamehandler.bind(this, 'Fred')}>Switch Name</button>
        <Person name={this.state.persons[0].name} 
                age={this.state.persons[0].age}
                myClick={this.switchNamehandler.bind(this, 'REY')} >Hobbies: Skiing</Person>

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Person.css';
 /*
   props give you access to the attributes added to </Person> components
   class-based components use this.props
@@ -11,7 +12,7 @@ import React from 'react';
 */
 const person = (props) => {
     return (
-        <div>
+        <div className="Person">
           <p onClick={props.myClick}>I am {props.name} and I'm {props.age} years old</p>
           <p>{props.children}</p>
           <input type="text" onChange={props.changed} value={props.name}/>
