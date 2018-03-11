@@ -51,25 +51,33 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px'
+    };
+
+    let people = null;
+    if(this.state.showPeople) {
+      people = (
+        <div >
+        <Person name={this.state.persons[0].name} 
+                age={this.state.persons[0].age}
+                myClick={this.switchNamehandler.bind(this, 'REY')} >Hobbies: Skiing</Person>
+        <Person name={this.state.persons[1].name}
+                  age={this.state.persons[1].age}
+                changed={this.nameChangedHandler}/> 
+        <Person name="sally" age="44"/>
+        </div>
+      );
     }
+
+
     return (
       <div className="App">
        <h1>React app</h1>
        <p>Paragraph text</p>
        <button 
-       style={myStyle}
-       onClick={this.togglePeopleHandler}>Toggle People</button>
-       { this.state.showPeople === true ?
-          <div >
-          <Person name={this.state.persons[0].name} 
-                  age={this.state.persons[0].age}
-                  myClick={this.switchNamehandler.bind(this, 'REY')} >Hobbies: Skiing</Person>
-          <Person name={this.state.persons[1].name}
-                    age={this.state.persons[1].age}
-                  changed={this.nameChangedHandler}/> 
-          <Person name="sally" age="44"/>
-          </div> : null
-       } 
+        style={myStyle}
+        onClick={this.togglePeopleHandler}>Toggle People
+       </button>
+       {people}
       </div>
     );
   }
