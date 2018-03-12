@@ -14,18 +14,11 @@ class App extends Component {
       { name: 'Bill', age: 23 },
       { name: 'frank', age: 55 }
     ],
-    showPeople: false
+    showPersons: false
   }
-  // Pass in an argument, then bind it
-  switchNamehandler = (newName) => {
-    // merges with existing state
-    this.setState({persons: [
-      // changes the first item in state
-     {name: newName, age: 300 },
-     {name: newName, age: 33 },
 
-    ] })
-  }
+  // 
+
  // for input field
   nameChangedHandler = (event) => {
     this.setState({
@@ -36,10 +29,18 @@ class App extends Component {
     ] 
    })
   }
+
+  deletePersonHandler= (personIndex) => {
+    console.log('delete')
+    const persons = this.state.persons; // reference/pointer
+    persons.splice(personIndex, 1); // removes one element from array
+    this.setState({persons: persons})
+  }
+
    togglePeopleHandler = () => {
      console.log('toggle')
-      const doesShow = this.state.showPeople;
-      this.setState({showPeople: !doesShow});
+      const doesShow = this.state.showPersons;
+      this.setState({showPersons: !doesShow});
    }
 
   // pass method as a prop (line 42)
@@ -54,12 +55,13 @@ class App extends Component {
     };
 
     let persons = null;
-
-    if(this.state.showPeople) {
+    // arrow function below allows you to pass the index 
+    if(this.state.showPersons) {
         persons = (
           <div>
-              {this.state.persons.map(person => {
+              {this.state.persons.map((person, index) => {
                 return <Person 
+                click={() => this.deletePersonHandler(index)}
                 name={person.name} 
                 age={person.age}/>
               })}
