@@ -5,4 +5,12 @@ Section 3 (Base Features) - Lessons 25-48
     Completed
 
 Section 4 (Lists and Conditionals) - Lessons 49-59
-     49-55
+     Completed
+
+Section 5 (Styling) - Lessons 60-70
+     60-61
+
+
+Practice Exercises:
+Lesson 3 - Assignment 1
+Lesson 4 - Assignment 2
