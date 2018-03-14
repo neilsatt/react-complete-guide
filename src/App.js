@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 // with classes that extend Components
@@ -89,17 +89,17 @@ class App extends Component {
       myStyle.backgroundColor = 'saddlebrown';
     }
 
-    const classes = [];
+    const assignedClasses = [];
     if(this.state.persons.length <=2){
-      classes.push('red');
+      assignedClasses.push(classes.red);
     }
     if(this.state.persons.length <= 1) {
-      classes.push('bold');
+      assignedClasses.push(classes.bold);
     }
     return (
-      <div className="App">
+      <div className={classes.App}>
        <h1>React app</h1>
-       <p className={classes.join('')}>Paragraph text</p>
+       <p className={assignedClasses.join('')}>Paragraph text</p>
        <button 
         style={myStyle}
         onClick={this.togglePeopleHandler}>Toggle People
