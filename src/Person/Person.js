@@ -1,5 +1,6 @@
 import React from 'react';
 import './Person.css';
+import Radium from 'radium';
 /*
   props give you access to the attributes added to </Person> components
   class-based components use this.props
@@ -21,4 +22,4 @@ const person = (props) => {
   
 };
 
-export default person;
+export default Radium(person);

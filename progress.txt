@@ -8,7 +8,7 @@ Section 4 (Lists and Conditionals) - Lessons 49-59
      Completed
 
 Section 5 (Styling) - Lessons 60-70
-     60-61
+     60-65
 
 Section 6 (Debugging) - Lessons 71-77
 
