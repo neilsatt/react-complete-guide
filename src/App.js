@@ -12,7 +12,8 @@ class App extends Component {
   state = {
     persons: [
       { id: 1, name: 'Bill', age: 23 }, 
-      { id: 2, name: 'frank', age: 55 }
+      { id: 2, name: 'frank', age: 55 },
+      { id: 3, name: 'ted', age: 43 },
     ],
     showPersons: false
   }
@@ -63,6 +64,7 @@ class App extends Component {
   render() {
     const myStyle = {
       backgroundColor: 'teal',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px'
@@ -83,13 +85,20 @@ class App extends Component {
               })}
         </div>
       );
+      myStyle.backgroundColor = 'saddlebrown';
     }
 
-
+    const classes = [];
+    if(this.state.persons.length <=2){
+      classes.push('red');
+    }
+    if(this.state.persons.length <= 1) {
+      classes.push('bold');
+    }
     return (
       <div className="App">
        <h1>React app</h1>
-       <p>Paragraph text</p>
+       <p className={classes.join('')}>Paragraph text</p>
        <button 
         style={myStyle}
         onClick={this.togglePeopleHandler}>Toggle People

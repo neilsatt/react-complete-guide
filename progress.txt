@@ -1,4 +1,4 @@
-Goal - Up to section 21 by end of March 
+Goal - Up to section 18 by end of March 
 350 Lessons
 
 Section 3 (Base Features) - Lessons 25-48
@@ -10,7 +10,11 @@ Section 4 (Lists and Conditionals) - Lessons 49-59
 Section 5 (Styling) - Lessons 60-70
      60-61
 
+Section 6 (Debugging) - Lessons 71-77
 
-Practice Exercises:
+Section 7 (React Internals) - Lessons 78-103
+
+
+Practice Exercises ToDo:
 Lesson 3 - Assignment 1
 Lesson 4 - Assignment 2
