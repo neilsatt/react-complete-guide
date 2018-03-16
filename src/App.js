@@ -62,16 +62,9 @@ class App extends Component {
   // add inline styles (not the preferred way)
   // toggle statement below - show div if it's true, else null (show nothing)
   render() {
-    const myStyle = {
-      backgroundColor: 'teal',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-    };
-
     let persons = null;
+    let btnClass = '';
+
     // arrow function below allows you to pass the index 
     if(this.state.showPersons) {
         persons = (
@@ -86,7 +79,7 @@ class App extends Component {
               })}
         </div>
       );
-      myStyle.backgroundColor = 'saddlebrown';
+      btnClass = classes.Red;
     }
 
     const assignedClasses = [];
@@ -101,8 +94,8 @@ class App extends Component {
        <h1>React app</h1>
        <p className={assignedClasses.join('')}>Paragraph text</p>
        <button 
-        style={myStyle}
-        onClick={this.togglePeopleHandler}>Toggle People
+         className = {btnClass}
+          onClick={this.togglePeopleHandler}>Toggle People
        </button>
        {persons}
       </div>
