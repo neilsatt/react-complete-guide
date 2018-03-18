@@ -15,6 +15,8 @@ Section 6 (Debugging) - Lessons 71-77
 
 Section 7 (React Internals) - Lessons 78-103
 
+Section 8 (Burger Builder) - Lessons 104-143
+
 
 Practice Exercises ToDo:
 Lesson 3 - Assignment 1
