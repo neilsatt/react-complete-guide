@@ -14,7 +14,8 @@ Section 6 (Debugging) - Lessons 71-77
      Completed
 
 Section 7 (React Internals) - Lessons 78-103
-
+     78-80
+     
 Section 8 (Burger Builder) - Lessons 104-143
 
 

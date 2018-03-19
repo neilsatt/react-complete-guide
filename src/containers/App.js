@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.css';
-import Person from '../components/Persons/Person/Person';
+import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 // with classes that extend Components
 // you can define state
@@ -15,6 +16,7 @@ class App extends Component {
       { id: 2, name: 'frank', age: 55 },
       { id: 3, name: 'ted', age: 43 },
     ],
+    otherState: 'some other value',
     showPersons: false
   }
 
@@ -63,41 +65,22 @@ class App extends Component {
   // toggle statement below - show div if it's true, else null (show nothing)
   render() {
     let persons = null;
-    let btnClass = '';
 
-    // arrow function below allows you to pass the index 
+    // Use the persons component
     if(this.state.showPersons) {
-        persons = (
-          <div>
-              {this.state.persons.map((person, index) => {
-                return <ErrorBoundary key={person.id}>
-                <Person 
-                click={() => this.deletePersonHandler(index)}
-                name={person.name} 
-                age={person.age}
-                
-                changed={(event) => this.nameChangedHandler(event, person.id)}/></ErrorBoundary>
-              })}
-        </div>
-      );
-      btnClass = classes.Red;
+        persons = 
+            <Persons 
+              persons={this.state.persons}
+              clicked={this.deletePersonHandler}
+              changed={this.nameChangedHandler} />;
     }
 
-    const assignedClasses = [];
-    if(this.state.persons.length <=2){
-      assignedClasses.push(classes.red);
-    }
-    if(this.state.persons.length <= 1) {
-      assignedClasses.push(classes.bold);
-    }
     return (
       <div className={classes.App}>
-       <h1>React app</h1>
-       <p className={assignedClasses.join('')}>Paragraph text</p>
-       <button 
-         className = {btnClass}
-          onClick={this.togglePeopleHandler}>Toggle People
-       </button>
+      <Cockpit 
+        showPersons={this.state.showPersons} 
+        persons={this.state.persons} 
+        clicked={this.togglePeopleHandler}/>
        {persons}
       </div>
     );
