@@ -8,8 +8,22 @@ import Cockpit from '../components/Cockpit/Cockpit';
 // props are safer and used more
 // STATEFULL CLASS 
 
-
+// super is needed for 'this' to work
 class App extends Component {
+  constructor(props){
+    super(props);
+    console.log('[App.js] Inside Constructor', props);
+    
+  }
+
+  componentWillMount() {
+    console.log('[App.js] Inside componentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('[App.js] in componentDidMount()');
+  }
+
   state = {
     persons: [
       { id: 1, name: 'Bill', age: 23 }, 
@@ -64,6 +78,7 @@ class App extends Component {
   // add inline styles (not the preferred way)
   // toggle statement below - show div if it's true, else null (show nothing)
   render() {
+    console.log('[App.js] in render()');
     let persons = null;
 
     // Use the persons component
