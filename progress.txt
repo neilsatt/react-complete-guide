@@ -14,10 +14,10 @@ Section 6 (Debugging) - Lessons 71-77
      Completed
 
 Section 7 (React Internals) - Lessons 78-103
-     78-84
+     78-88
      
 Section 8 (Burger Builder) - Lessons 104-143
-
+     104-
 
 Practice Exercises ToDo:
 Lesson 3 - Assignment 1
